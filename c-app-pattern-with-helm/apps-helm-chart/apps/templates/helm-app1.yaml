@@ -10,7 +10,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: helm-app111
+    namespace: helm-app1
     server: {{ $application.server }}
   project: default
   source:
