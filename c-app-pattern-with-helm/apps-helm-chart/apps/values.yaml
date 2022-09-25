@@ -5,9 +5,14 @@
 #    repoURL: https://github.com/argoproj/argocd-example-apps
 #    targetRevision: HEAD
 
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  source:
-    repoURL: https://github.com/sunnykeila/01-argocd-repo
-    targetRevision: master
+#spec:
+#  destination:
+#    server: https://kubernetes.default.svc
+#  source:
+#    repoURL: https://github.com/sunnykeila/01-argocd-repo
+#    targetRevision: master
+
+applications:
+    - server: https://kubernetes.default.svc
+      repoURL: https://github.com/sunnykeila/01-argocd-repo
+      targetRevision: master

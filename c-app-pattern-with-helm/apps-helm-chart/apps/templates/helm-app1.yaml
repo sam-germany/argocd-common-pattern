@@ -1,3 +1,5 @@
+{{- range $application :=  .Values.applications -}}
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -7,13 +9,13 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: helm-app1
-    server: {{ .Values.spec.destination.server }}
+    namespace: helm-app111
+    server: {{ $application.server }}
   project: default
   source:
     path: helm-guestbook
-    repoURL: {{ .Values.spec.source.repoURL }}
-    targetRevision: {{ .Values.spec.source.targetRevision }}
+    repoURL: {{ $application.repoURL }}
+    targetRevision: {{ $application.targetRevision }}
   syncPolicy:
     automated:
       allowEmpty: true
@@ -21,3 +23,4 @@ spec:
     syncOptions:
     - allowEmpty=true
     - CreateNamespace=true
+{{ end }}
