@@ -12,7 +12,12 @@
 #    repoURL: https://github.com/sunnykeila/01-argocd-repo
 #    targetRevision: master
 
-applications:
-    - server: https://kubernetes.default.svc
-      repoURL: https://github.com/sunnykeila/01-argocd-repo
-      targetRevision: master
+server: https://kubernetes.default.svc
+repoURL: https://github.com/sunnykeila/01-argocd-repo
+targetRevision: master
+
+
+#applications:
+#    - server: https://kubernetes.default.svc
+#      repoURL: https://github.com/sunnykeila/01-argocd-repo
+#      targetRevision: master
