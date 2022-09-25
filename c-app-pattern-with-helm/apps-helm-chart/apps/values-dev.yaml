@@ -14,14 +14,14 @@ applications:
       targetRevision: master
       path: helm-hooks
 
-    - name: helm-app3
-      namespace: helm-app3
-      repoURL: https://github.com/sunnykeila/01-argocd-repo
-      targetRevision: master
-      path: kustomize-guestbook
+#    - name: helm-app3
+#      namespace: helm-app3
+#      repoURL: https://github.com/sunnykeila/01-argocd-repo
+#      targetRevision: master
+#      path: kustomize-guestbook
 
-    - name: helm-app4
-      namespace: helm-app4
-      repoURL: https://github.com/sunnykeila/01-argocd-repo
-      targetRevision: master
-      path: sync-waves
+#    - name: helm-app4
+#      namespace: helm-app4
+#      repoURL: https://github.com/sunnykeila/01-argocd-repo
+#      targetRevision: master
+#      path: sync-waves

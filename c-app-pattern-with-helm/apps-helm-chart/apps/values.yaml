@@ -1,6 +1,6 @@
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  source:
-    repoURL: https://github.com/sunnykeila/01-argocd-repo
-    targetRevision: master
+#spec:
+#  destination:
+#    server: https://kubernetes.default.svc
+#  source:
+#    repoURL: https://github.com/sunnykeila/01-argocd-repo
+#    targetRevision: master

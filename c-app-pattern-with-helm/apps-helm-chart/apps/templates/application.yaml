@@ -1,27 +1,27 @@
-{{- $top := . -}}
-{{- range $application :=  .Values.applications -}}
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: {{ $application.name }}
-  namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    namespace: {{ $application.namespace }}
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    path: {{ $application.path }}
-    repoURL: {{ $application.repoURL }}
-    targetRevision: {{ $application.targetRevision }}
-  syncPolicy:
-    automated:
-      allowEmpty: true
-      selfHeal: true
-    syncOptions:
-    - allowEmpty=true
-    - CreateNamespace=true
-{{ end }}
+#{{- $top := . -}}
+#{{- range $application :=  .Values.applications -}}
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: {{ $application.name }}
+#  namespace: argocd
+#  finalizers:
+#  - resources-finalizer.argocd.argoproj.io
+#spec:
+#  destination:
+#    namespace: {{ $application.namespace }}
+#    server: https://kubernetes.default.svc
+#  project: default
+#  source:
+#    path: {{ $application.path }}
+#    repoURL: {{ $application.repoURL }}
+#    targetRevision: {{ $application.targetRevision }}
+#  syncPolicy:
+#    automated:
+#      allowEmpty: true
+#      selfHeal: true
+#    syncOptions:
+#    - allowEmpty=true
+#    - CreateNamespace=true
+#{{ end }}
