@@ -1,34 +1,6 @@
-#spec:
-#  destination:
-#    server: https://kubernetes.default.svc
-#  source:
-#    repoURL: https://github.com/sunnykeila/01-argocd-repo
-#    targetRevision: master
-
-
-stage: dev
-
-applications:
-    - name: helm-app1
-      namespace: helm-app1
-      repoURL: https://github.com/sunnykeila/01-argocd-repo
-      targetRevision: master
-      path: helm-guestbookcc
-
-    - name: helm-app2
-      namespace: helm-app2
-      repoURL: https://github.com/sunnykeila/01-argocd-repo
-      targetRevision: master
-      path: helm-hooks
-
-#    - name: helm-app3
-#      namespace: helm-app3
-#      repoURL: https://github.com/sunnykeila/01-argocd-repo
-#      targetRevision: master
-#      path: kustomize-guestbook
-
-#    - name: helm-app4
-#      namespace: helm-app4
-#      repoURL: https://github.com/sunnykeila/01-argocd-repo
-#      targetRevision: master
-#      path: sync-waves
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://github.com/argoproj/argocd-example-apps
+    targetRevision: HEAD
