@@ -4,19 +4,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $application.name }}
+  name: helm-app1
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: {{ $application.namespace }}
+    namespace: helm-app1
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: {{ $application.path }}
-    repoURL: {{ $application.repoURL }}
-    targetRevision: {{ $application.targetRevision }}
+    path: helm-guestbookcc
+    repoURL: https://github.com/sunnykeila/01-argocd-repo
+    targetRevision: master
   syncPolicy:
     automated:
       allowEmpty: true
