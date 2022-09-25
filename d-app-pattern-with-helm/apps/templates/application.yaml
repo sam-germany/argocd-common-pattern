@@ -1,0 +1,27 @@
+{{- $top := . -}}
+{{- range $application :=  .Values.applications -}}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app-helm-approach
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: sunny-namespace
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: d-app-pattern-with-helm/apps
+    repoURL: https://github.com/sunnykeila/02-argocd-deployment.git
+    targetRevision: master
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      selfHeal: true
+    syncOptions:
+    - allowEmpty=true
+    - CreateNamespace=true
+{{ end }}
