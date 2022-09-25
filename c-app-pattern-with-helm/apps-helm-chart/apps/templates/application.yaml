@@ -1,27 +1,27 @@
-{{- $top := . -}}
-{{- range $application :=  .Values.applications -}}
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: helm-app1
-  namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec:
-  destination:
-    namespace: helm-app1
-    server: https://kubernetes.default.svc
-  project: default
-  source:
-    path: helm-guestbookcc
-    repoURL: https://github.com/sunnykeila/01-argocd-repo
-    targetRevision: master
-  syncPolicy:
-    automated:
-      allowEmpty: true
-      selfHeal: true
-    syncOptions:
-    - allowEmpty=true
-    - CreateNamespace=true
-{{ end }}
+#{{- $top := . -}}
+#{{- range $application :=  .Values.applications -}}
+#---
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: helm-app1
+#  namespace: argocd
+#  finalizers:
+#  - resources-finalizer.argocd.argoproj.io
+#spec:
+#  destination:
+#    namespace: helm-app1
+#    server: https://kubernetes.default.svc
+#  project: default
+#  source:
+#    path: helm-guestbookcc
+#    repoURL: https://github.com/sunnykeila/01-argocd-repo
+#    targetRevision: master
+#  syncPolicy:
+#    automated:
+#      allowEmpty: true
+#      selfHeal: true
+#    syncOptions:
+#    - allowEmpty=true
+#    - CreateNamespace=true
+#{{ end }}
