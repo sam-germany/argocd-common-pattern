@@ -1,18 +1,18 @@
 
-stage: dev
+#stage: dev
 
-applications:
-    - name: helm-app1
-      namespace: helm-app1
-      repoURL: https://github.com/sunnykeila/01-argocd-repo
-      targetRevision: master
-      path: helm-guestbookcc
+#applications:
+#    - name: helm-app1
+#      namespace: helm-app1
+#      repoURL: https://github.com/sunnykeila/01-argocd-repo
+#      targetRevision: master
+#      path: helm-guestbookcc
 
-    - name: helm-app2
-      namespace: helm-app2
-      repoURL: https://github.com/sunnykeila/01-argocd-repo
-      targetRevision: master
-      path: helm-hooks
+#    - name: helm-app2
+#      namespace: helm-app2
+#      repoURL: https://github.com/sunnykeila/01-argocd-repo
+#      targetRevision: master
+#      path: helm-hooks
 
 #    - name: helm-app3
 #      namespace: helm-app3
