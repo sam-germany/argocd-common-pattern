@@ -1,0 +1,27 @@
+
+stage: dev
+
+applications:
+    - name: helm-app11
+      namespace: helm-app11
+      repoURL: https://github.com/sunnykeila/01-argocd-repo
+      targetRevision: master
+      path: helm-guestbookcc
+
+    - name: helm-app22
+      namespace: helm-app22
+      repoURL: https://github.com/sunnykeila/01-argocd-repo
+      targetRevision: master
+      path: helm-hooks
+
+    - name: helm-app33
+      namespace: helm-app33
+      repoURL: https://github.com/sunnykeila/01-argocd-repo
+      targetRevision: master
+      path: kustomize-guestbook
+
+    - name: helm-app44
+      namespace: helm-app44
+      repoURL: https://github.com/sunnykeila/01-argocd-repo
+      targetRevision: master
+      path: sync-waves
